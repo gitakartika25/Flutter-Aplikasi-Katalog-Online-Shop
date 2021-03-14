@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kuis1/constants.dart';
 import 'categories.dart';
 import 'package:kuis1/models/Product.dart';
+import 'Item_card.dart';
 
 class Body extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class Body extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
           child: Text(
             "Darta Store",
             style: Theme.of(context)
@@ -20,31 +21,22 @@ class Body extends StatelessWidget {
           ),
         ),
         Categories(),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Container(
-              padding: EdgeInsets.all(kDefaultPaddin),
-              height: 180,
-              width: 160,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+            child: GridView.builder(
+              itemCount: products.length,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: kDefaultPaddin,
+                crossAxisSpacing: kDefaultPaddin,
+                childAspectRatio: 0.75,
               ),
-              child: Image.asset(products[0].image),
+              itemBuilder: (context, index) =>
+                  ItemCard(product: products[index]),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin / 4),
-              child: Text(
-                products[0].title,
-                style: TextStyle(color: kTextLightColor),
-              ),
-            ),
-            Text(
-              "Rp35000",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-          ],
-        ),
+          ),
+        )
       ],
     );
   }

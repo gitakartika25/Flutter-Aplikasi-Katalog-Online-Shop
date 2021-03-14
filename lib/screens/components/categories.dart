@@ -9,7 +9,14 @@ class Categories extends StatefulWidget {
 }
 
 class _CategoriesState extends State<Categories> {
-  List<String> categories = ["Tas", "Sepatu", "Daster", "Kemeja"];
+  List<String> categories = [
+    "Tas",
+    "Sepatu",
+    "Daster",
+    "Kemeja",
+    "Skincare",
+    "Beauty"
+  ];
 
   int selectedIndex = 0;
   @override
@@ -17,7 +24,7 @@ class _CategoriesState extends State<Categories> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
       child: SizedBox(
-          height: 25,
+          height: 28,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: categories.length,
@@ -34,20 +41,23 @@ class _CategoriesState extends State<Categories> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+        padding:
+            const EdgeInsets.symmetric(horizontal: kDefaultPaddin, vertical: 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              categories[index],
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: selectedIndex == index ? kTextColor : kTextLightColor,
+            Container(
+              child: Text(
+                categories[index],
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: selectedIndex == index ? kTextColor : kTextLightColor,
+                ),
               ),
             ),
             Container(
               margin: EdgeInsets.only(top: kDefaultPaddin / 4),
-              height: 2,
+              height: 3,
               width: 30,
               color: selectedIndex == index ? Colors.black : Colors.transparent,
             )

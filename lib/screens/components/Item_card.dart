@@ -21,9 +21,13 @@ class ItemCard extends StatelessWidget {
             padding: EdgeInsets.all(kDefaultPaddin),
             decoration: BoxDecoration(
               color: product.color,
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(12),
             ),
-            child: Image.asset(product.image),
+            child: Container(
+              child: Image.asset(product.image),
+              height: 250,
+              width: 250,
+            ),
           ),
         ),
         Padding(

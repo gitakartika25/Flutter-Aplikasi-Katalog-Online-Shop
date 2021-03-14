@@ -1,36 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:kuis1/constants.dart';
+import 'categories.dart';
 
 class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
           child: Text(
-            "Women",
+            "Darta Store",
             style: Theme.of(context)
                 .textTheme
                 .headline5
                 .copyWith(fontWeight: FontWeight.bold),
           ),
-        )
+        ),
+        Categories(),
       ],
     );
-  }
-}
-
-// Membuat Statefull Widget untuk masing" kategori
-
-class Categories extends StatefulWidget {
-  @override
-  _CategoriesState createState() => _CategoriesState();
-}
-
-class _CategoriesState extends State<Categories> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

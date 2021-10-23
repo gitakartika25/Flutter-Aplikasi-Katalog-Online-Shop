@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
         ), //menambahkan icon back.svg dari folder asset
         onPressed: () {},
       ),
+      title: Text("Darta Store"),
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset(
@@ -38,7 +39,7 @@ class HomeScreen extends StatelessWidget {
           ),
           onPressed: () {},
         ),
-        SizedBox(width: kDefaultPaddin / 2)
+        SizedBox(width: kDefaultPaddin / 2),
       ],
     );
   }

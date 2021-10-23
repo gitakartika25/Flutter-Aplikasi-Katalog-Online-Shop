@@ -12,13 +12,13 @@ class Body extends StatelessWidget {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-          child: Text(
-            "Darta Store",
-            style: Theme.of(context)
-                .textTheme
-                .headline5
-                .copyWith(fontWeight: FontWeight.bold),
-          ),
+          // child: Text(
+          //   "Darta Store",
+          //   style: Theme.of(context)
+          //       .textTheme
+          //       .headline5
+          //       .copyWith(fontWeight: FontWeight.bold),
+          // ),
         ),
         Categories(),
         Expanded(
